@@ -1,0 +1,15 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-service-auth
+eureka:
+  environment: dev
+  datacenter: cloud
+  client:
+    service-url:
+      defaultZone: http://localhost:5376/eureka
+  instance:
+    hostname: cloud-service-auth
+    prefer-ip-address: true

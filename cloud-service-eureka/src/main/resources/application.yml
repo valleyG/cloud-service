@@ -1,0 +1,17 @@
+server:
+  port: 5376
+
+spring:
+  application:
+    name: eurek-server
+eureka:
+  environment: dev
+  datacenter: cloud
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+  instance:
+    hostname: localhost
+
