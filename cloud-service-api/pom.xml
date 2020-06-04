@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.valley</groupId>
     <artifactId>cloud-service-api</artifactId>
     <version>1.0.0</version>
 

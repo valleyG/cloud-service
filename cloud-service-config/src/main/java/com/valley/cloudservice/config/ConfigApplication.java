@@ -1,17 +1,17 @@
-package com.valley.cloudservice.auth;
+package com.valley.cloudservice.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableEurekaClient
-public class AuthApplication {
+@EnableConfigServer
+public class ConfigApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(ConfigApplication.class, args);
     }
 
 }

@@ -1,15 +1,19 @@
 server:
-  port: 9527
+  port: 1115
 
 spring:
   application:
     name: cloud-service-auth
+  cloud:
+    config:
+      server:
+        git:
+          uri:
 eureka:
-  environment: dev
-  datacenter: cloud
   client:
     service-url:
       defaultZone: http://localhost:5376/eureka
   instance:
     hostname: cloud-service-auth
     prefer-ip-address: true
+
