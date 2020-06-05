@@ -3,17 +3,25 @@ server:
 
 spring:
   application:
-    name: cloud-service-auth
+    name: cloud-service-config
   cloud:
     config:
       server:
         git:
-          uri:
+          uri: https://github.com/valleyG/cloud-service.git
+          username: valleyG
+          password: zhm092324.
+          search-paths: config-repository/{application}
+  security:
+    user:
+      name: zhm
+      password: 123456
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:5376/eureka
   instance:
-    hostname: cloud-service-auth
+    hostname: cloud-service-config
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
 

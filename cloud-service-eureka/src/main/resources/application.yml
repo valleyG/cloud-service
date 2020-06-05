@@ -14,4 +14,7 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
   instance:
     hostname: localhost
+  server:
+    enable-self-preservation: false #关闭自我保护,官方不推荐生产环境配置
+    eviction-interval-timer-in-ms: 40000 #服务节点清理间隔时间,官方不推荐生产环境配置
 
