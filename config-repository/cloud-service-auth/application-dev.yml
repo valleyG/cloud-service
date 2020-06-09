@@ -6,3 +6,12 @@ eureka:
   client:
     healthcheck:
       enabled: true
+
+spring:
+  redis:
+    host: 139.129.228.213
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
