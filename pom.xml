@@ -17,8 +17,7 @@
     <modules>
         <module>cloud-service-auth</module>
         <module>cloud-service-config</module>
+        <module>cloud-service-eureka</module>
+        <module>cloud-service-api</module>
     </modules>
-    <properties>
-        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
-    </properties>
 </project>
