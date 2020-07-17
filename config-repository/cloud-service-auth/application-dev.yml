@@ -1,7 +1,6 @@
 myapp:
   test:
     zhuhongmin
-
 eureka:
   client:
     healthcheck:
@@ -9,7 +8,7 @@ eureka:
 
 spring:
   redis:
-    host: 139.129.228.213
+    host: 192.168.73.101
     port: 6379
     lettuce:
       pool:
