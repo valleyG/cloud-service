@@ -10,14 +10,14 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-service-starter</artifactId>
+    <artifactId>cloud-service-common-starter</artifactId>
     <version>1.0.0-Snapshot</version>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.valley</groupId>
-            <artifactId>cloud-service-api</artifactId>
+            <artifactId>cloud-service-common-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
