@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.valley.cloundserver.common.starter.config.SwaggerDocAutoConfig

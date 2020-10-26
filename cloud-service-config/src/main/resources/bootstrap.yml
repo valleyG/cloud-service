@@ -8,10 +8,10 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/ValleyG/config-repository.git
+          uri: https://github.com/valleyG/cloud-service.git
           username: valleyG
           password: zhm092324
-          search-paths: /{application}
+          search-paths: /config-repository/{application}
   security:
     user:
       name: zhm

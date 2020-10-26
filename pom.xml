@@ -18,6 +18,38 @@
         <module>cloud-service-auth</module>
         <module>cloud-service-config</module>
         <module>cloud-service-eureka</module>
-        <module>cloud-service-api</module>
+        <module>cloud-service-common-api</module>
+        <module>cloud-service-common-starter</module>
     </modules>
+
+    <properties>
+        <com.valley.cloud.service.api>1.0.0-Snapshot</com.valley.cloud.service.api>
+        <com.valley.cloud.service.starter>1.0.0-Snapshot</com.valley.cloud.service.starter>
+        <io.springfox.springfox-swagger2>2.9.2</io.springfox.springfox-swagger2>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.valley</groupId>
+                <artifactId>cloud-service-api</artifactId>
+                <version>${com.valley.cloud.service.api}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.valley</groupId>
+                <artifactId>cloud-service-starter</artifactId>
+                <version>${com.valley.cloud.service.starter}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${io.springfox.springfox-swagger2}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${io.springfox.springfox-swagger2}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

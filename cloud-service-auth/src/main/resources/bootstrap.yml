@@ -16,13 +16,6 @@ spring:
         enabled: true
         service-id: cloud-service-config
       fail-fast: true #当连接不上配置中心的时候立马报错,服务启动失败
-  redis:
-    jedis:
-      pool:
-        max-active: 10
-        max-idle: 8
-        max-wait: 1000
-        min-idle: 5
 eureka:
   client:
     service-url:
@@ -32,3 +25,10 @@ eureka:
     prefer-ip-address: true
     lease-expiration-duration-in-seconds: 30 #eureka服务端收到该服务最后一次心跳到擦除该服务之间的时间间隔,秒为单位
     lease-renewal-interval-in-seconds: 10
+
+application:
+  swagger:
+    enable: true
+    title: 测试swagger文档
+    author: valley
+    version: 1.0.0
