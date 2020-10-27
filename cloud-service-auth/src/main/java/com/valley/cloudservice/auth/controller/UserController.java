@@ -1,6 +1,5 @@
 package com.valley.cloudservice.auth.controller;
 
-import com.valley.cloudservice.auth.service.Service;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +26,6 @@ import java.util.List;
 public class UserController {
     @Value("${myapp.test}")
     private String value;
-    @Autowired
-    private List<Service> services;
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 

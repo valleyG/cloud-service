@@ -28,6 +28,7 @@
         <io.springfox.springfox-swagger2>2.9.2</io.springfox.springfox-swagger2>
         <mybatis.spring.starter>2.0.1</mybatis.spring.starter>
         <mysql.connector.version>8.0.16</mysql.connector.version>
+        <common.pool2.version>2.8.1</common.pool2.version>
     </properties>
 
     <dependencyManagement>
@@ -62,7 +63,12 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.connector.version}</version>
             </dependency>
-
+            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-pool2 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>${common.pool2.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

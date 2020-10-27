@@ -45,7 +45,7 @@
         </dependency>
         <dependency>
             <groupId>com.valley</groupId>
-            <artifactId>cloud-service-api</artifactId>
+            <artifactId>cloud-service-common-api</artifactId>
         </dependency>
     </dependencies>
 

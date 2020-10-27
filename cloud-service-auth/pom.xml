@@ -39,17 +39,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>com.valley</groupId>
-            <artifactId>cloud-service-starter</artifactId>
+            <artifactId>cloud-service-common-starter</artifactId>
         </dependency>
     </dependencies>
 

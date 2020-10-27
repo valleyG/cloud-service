@@ -8,7 +8,7 @@ spring:
     active: dev
   cloud:
     config:
-      name: ${spring.application.name}
+      name: common,${spring.application.name}
       profile: ${spring.profiles.active}
       username: zhm
       password: 123456
