@@ -26,6 +26,8 @@
         <com.valley.cloud.service.api>1.0.0-Snapshot</com.valley.cloud.service.api>
         <com.valley.cloud.service.starter>1.0.0-Snapshot</com.valley.cloud.service.starter>
         <io.springfox.springfox-swagger2>2.9.2</io.springfox.springfox-swagger2>
+        <mybatis.spring.starter>2.0.1</mybatis.spring.starter>
+        <mysql.connector.version>8.0.16</mysql.connector.version>
     </properties>
 
     <dependencyManagement>
@@ -50,6 +52,17 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${io.springfox.springfox-swagger2}</version>
             </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis.spring.starter}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.connector.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
