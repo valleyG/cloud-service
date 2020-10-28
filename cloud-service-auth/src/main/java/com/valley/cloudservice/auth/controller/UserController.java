@@ -28,6 +28,9 @@ import java.util.List;
 public class UserController {
     @Value("${myapp.test}")
     private String value;
+
+    @Value("${mybatis.mapperLocations}")
+    private String mapperLocation;
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
     @Autowired
