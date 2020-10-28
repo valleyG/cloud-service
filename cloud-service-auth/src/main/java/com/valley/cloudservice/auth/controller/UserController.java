@@ -1,5 +1,7 @@
 package com.valley.cloudservice.auth.controller;
 
+import com.valley.cloudservice.auth.mapper.StudentMapper;
+import com.valley.cloudservice.common.api.entity.StudentPO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,13 @@ public class UserController {
     private String value;
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
+    @Autowired
+    private StudentMapper studentMapper;
 
     @GetMapping("test")
     @ApiOperation("测试接口")
     public String test() {
+        StudentPO studentPO = studentMapper.selectById(1L);
         ValueOperations<String, String> stringValueOperations = redisTemplate.opsForValue();
         stringValueOperations.set(value, "test");
         return stringValueOperations.get(value);

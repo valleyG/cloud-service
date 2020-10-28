@@ -14,3 +14,7 @@ spring:
       pool:
         max-active: 8
         max-idle: 8
+
+mybatis:
+  type-aliases-package: com.valley.cloudservice.common.api.entity
+  mapperLocations: classpath*:mybatis/mapper/**/*Mapper.xml

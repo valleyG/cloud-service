@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        
+<mapper namespace="com.valley.cloudservice.auth.mapper.StudentMapper">
+
+    <resultMap id="BaseResultMap" type="com.valley.cloudservice.common.api.entity.StudentPO" >
+ 			<result column="id" property="id" />
+ 			<result column="student_name" property="studentName" />
+ 			<result column="sex" property="sex" />
+ 			<result column="id_card" property="idCard" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    	id,
+    	student_name,
+    	sex,
+    	id_card 
+    </sql>
+
+    <insert id="insert"  keyProperty="id" parameterType="com.valley.cloudservice.common.api.entity.StudentPO">
+        INSERT INTO student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test ='null != id'>
+                     id ,
+                </if>
+                <if test ='null != studentName and  "" != studentName'>
+                     student_name,
+                </if>
+                <if test ='null != sex and  "" != sex'>
+                     sex,
+                </if>
+                <if test ='null != idCard and  "" != idCard'>
+                     id_card 
+                </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+                <if test ='null != id'>
+                     #{id},
+                </if>
+                <if test ='null != studentName and "" != studentName'>
+                     #{studentName},
+                </if>
+                <if test ='null != sex and "" != sex'>
+                     #{sex},
+                </if>
+                <if test ='null != idCard and "" != idCard'>
+                     #{idCard} 
+                </if>
+        </trim>
+    </insert>
+    
+    <update id="deleteById" parameterType="com.valley.cloudservice.common.api.entity.StudentPO">
+    	UPDATE student
+    	SET delete_flag = #{deleteFlag}, 
+    		update_user_id = #{updateUserId},
+    	 	update_time = #{updateTime}
+	    WHERE id = #{id}
+    </update>
+    
+    <update id="update" parameterType="com.valley.cloudservice.common.api.entity.StudentPO">
+        UPDATE student
+        <set>
+                <if test ='null != id'>
+                    id =#{id},
+                </if>
+                <if test ='null != studentName and "" != studentName'>
+                    student_name =#{studentName},
+                </if>
+                <if test ='null != sex and "" != sex'>
+                    sex =#{sex},
+                </if>
+                <if test ='null != idCard and "" != idCard'>
+                    id_card =#{idCard} 
+                </if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+    <select id="selectById" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM student
+        WHERE id = #{id}
+    </select>
+
+    <select id="listByCondition" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM student
+        <where>
+            <if test="extraSpliceSql != null and  extraSpliceSql != ''">
+                and ${extraSpliceSql}
+            </if>
+            <if test="spliceSql != null and spliceSql != ''">
+                and ${spliceSql}
+            </if>
+        </where>
+    </select>
+
+
+    <select id="selectByEntity" resultMap="BaseResultMap" parameterType="com.valley.cloudservice.common.api.entity.StudentPO">
+        SELECT <include refid="Base_Column_List" />
+        FROM student
+        <where>
+                <if test ='null != id'>
+                    and id =#{id}
+                </if>
+                <if test ='null != studentName and "" != studentName'>
+                    and student_name =#{studentName}
+                </if>
+                <if test ='null != sex and "" != sex'>
+                    and sex =#{sex}
+                </if>
+                <if test ='null != idCard and "" != idCard'>
+                    and id_card =#{idCard}
+                </if>
+        </where>
+    </select>
+    <insert id="batchInsert" parameterType="list">
+        INSERT INTO student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <include refid="Base_Column_List"></include>
+        </trim>
+        values
+        <foreach collection="list" item="entity"  separator=",">
+               ( 
+                #{entity.id},
+            
+                #{entity.studentName},
+            
+                #{entity.sex},
+            
+                #{entity.idCard} 
+            )
+        </foreach>
+    </insert>
+    
+  <select id="listByEntity" resultMap="BaseResultMap" parameterType="com.valley.cloudservice.common.api.entity.StudentPO">
+        SELECT <include refid="Base_Column_List" />
+        FROM student
+        <where>
+                <if test ='null != id'>      
+                    and id =#{id}
+                </if>
+                <if test ='null != studentName and "" != studentName'>
+                    and student_name =#{studentName}
+                </if>
+                <if test ='null != sex and "" != sex'>
+                    and sex =#{sex}
+                </if>
+                <if test ='null != idCard and "" != idCard'>
+                    and id_card =#{idCard}
+                </if>
+        </where>
+    </select>
+    <select id="exist" resultType="integer">
+    	select 1
+    	FROM student 
+    	<where>
+                <if test ='null != id'>      
+                    and id =#{id}
+                </if>
+                <if test ='null != studentName and "" != studentName'>
+                    and student_name =#{studentName}
+                </if>
+                <if test ='null != sex and "" != sex'>
+                    and sex =#{sex}
+                </if>
+                <if test ='null != idCard and "" != idCard'>
+                    and id_card =#{idCard}
+                </if>
+        </where>
+        limit 1
+    </select>
+</mapper>
