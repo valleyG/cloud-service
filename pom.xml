@@ -27,7 +27,7 @@
         <com.valley.cloud.service.starter>1.0.0-Snapshot</com.valley.cloud.service.starter>
         <io.springfox.springfox-swagger2>2.9.2</io.springfox.springfox-swagger2>
         <mybatis.spring.starter>2.0.1</mybatis.spring.starter>
-        <mysql.connector.version>8.0.16</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
         <common.pool2.version>2.8.1</common.pool2.version>
         <lombok.version>1.18.12</lombok.version>
         <mybatis.version>3.5.1</mybatis.version>
